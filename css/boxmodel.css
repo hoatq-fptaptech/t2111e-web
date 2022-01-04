@@ -90,6 +90,10 @@ p{
 p{
     color: green;
 }
+/*
+thẻ < class < id (3 cấp ưu tiên)
+cấp độ < cha con + cấp độ
+ */
 .abc{
     background-image: url("../imgs/anhso1.jpg");
     background-size: cover;
