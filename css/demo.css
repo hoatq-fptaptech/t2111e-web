@@ -18,4 +18,8 @@ p{
 a{
     text-decoration: none;
     text-transform: none;/* uppercase lowercase capitalize none */
+    font-style: italic;
+}
+li{
+    list-style: none;
 }
