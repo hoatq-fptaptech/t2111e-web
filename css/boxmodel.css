@@ -10,7 +10,7 @@ body{
     font-family: 'Roboto', sans-serif;/* font backup */
     text-align: left;/* center */
 }
-div{
+.item{
     width: 350px;
     height: 350px;
     /*border: 1px solid #385838;*/
