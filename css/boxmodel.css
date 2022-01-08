@@ -34,7 +34,7 @@ body{
      */
     padding: 15px;
     box-sizing: border-box;/* content-box */
-    border-radius: 5px;
+    border-radius: 5px; /* thầy bảo là dùng để cắt góc */
     box-shadow: 0 0 10px #aaaaaa;
 }
 img{
