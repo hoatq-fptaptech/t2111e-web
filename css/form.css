@@ -18,3 +18,13 @@
     margin-left: 10px;
 }
 /* regex */
+.btn-submit{
+    float: left;
+    color: #ffffff;
+    background-color: darkred;
+    padding: 5px 15px;
+    border: 1px solid darkred;
+}
+.btn-submit:hover{
+    background-color: #a10303;
+}
