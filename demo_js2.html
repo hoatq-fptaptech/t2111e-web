@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo JS2</title>
+</head>
+<body>
+    <h1 id="title" class="tit">Xin chào cả lớp T2111E</h1>
+    <p id="para">Barcelona đón 4 viện binh "khủng" tháng 1, tất tay đấu Real Madrid. Barcelona đón 4 viện binh "khủng" tháng 1, tất tay đấu Real Madrid. Barcelona đón 4 viện binh "khủng" tháng 1, tất tay đấu Real Madrid
+        Barcelona đón 4 viện binh "khủng" tháng 1, tất tay đấu Real Madrid</p>
+    <input type="number" min="1" id="input-min" placeholder="Minutes"/><button onclick="TimerCountdown()" type="button">Run Timer</button>
+    <h2><span id="minutes">00</span>:<span id="seconds">00</span> </h2>
+    <a href="#" onclick="onoff()">ON/OFF</a>
+    <div id="light">LIGHT</div>
+    <script type="text/javascript">
+        var obj = {};
+        obj.name = "Lê Văn Hùng";// object.attribute = value;
+        obj.age = 19;
+        obj.address = "125 Quang Trung, Hoàn Kiếm, HN";
+        console.log(obj);
+        var obj2 = {   // object = {
+            name:"Nguyễn Văn Khoa", // attribute:value,
+            age:20,
+            address:"Số 8 Tôn Thất Thuyết",
+            PID:189272172,
+            tel:"0987654321",
+            khaibao: function (){
+                console.log("CCCD: "+this.PID+" tel: "+this.tel); // this đối tượng ngầm định bên trong khai báo
+            }
+        }; // Khai báo
+        // console.log(obj2.name);
+        // obj2.khaibao();// thực hiện hành vi
+        // obj2.PID = 123456789101;
+        obj2.khaibao();// thực hiện hành vi
+
+        // giả sử có 1 đối tượng khác giống hệt obj2
+        var obj3 = Object.create(obj2);// tạo 1 đối tượng từ mẫu của obj2
+        obj3.PID = 121343565798;
+        obj3.tel = '09999999';
+        obj3.khaibao();
+    </script>
+<script type="text/javascript">
+    function onoff(){
+        var l = document.getElementById("light");
+        if(l.style.display == "none"){
+            l.style.display = "block";
+        }else{
+            l.style.display = "none";
+        }
+    }
+    // viết script để tác động đến giao diện
+    // mỗi 1 phần từ bên html sẽ luôn có 1 đối tượng (tham chiếu) bên JS
+    // cái mà chúng ta nhìn thấy chính là các giá trị thuộc tính của đối tượng đó
+    var t = document.getElementById("title"); // DOM element - Document object model element
+    setTimeout(function (){
+        t.style.color = "red";
+        t.innerText = "Hello T2111E";
+        t.innerHTML += "<i> FPT Aptech</i>";
+        t.classList.add("abc");
+    },3000);
+
+    var r = document.getElementById("para");
+    var f = false;
+    setInterval(function (){
+        r.style.backgroundColor = "darkorange"
+        if(f == false){
+            r.style.color = "green";
+            f = true;
+        }else{
+            r.style.color = "blue";
+            f= false;
+        }
+    },1000);
+
+    function TimerCountdown(){
+        var ip = document.getElementById("input-min");
+        var min=0,sec=0;
+        min = ip.value;// lấy giá trị của input- textarea - select
+        if(min > 0){
+            var span_min = document.getElementById("minutes");
+            var span_sec = document.getElementById("seconds");
+            var timer = setInterval(function (){
+                // toán tử 3 ngôi
+                var m_txt = min<10?("0"+min):min;
+
+                // if(m<10){
+                //     m_txt = "0"+min;
+                // }else{
+                //     m_txt = min;
+                // }
+
+                var sec_txt = sec<10?"0"+sec:sec;
+
+                // console.log(m_txt+":"+sec_txt);
+                span_min.innerText = m_txt;
+                span_sec.innerText = sec_txt;
+                sec--;
+                if(sec<0){
+                    sec=59;
+                    min--;
+                }
+                if(min<0){
+                    clearInterval(timer);
+                }
+            },1000);
+        }else{
+            alert("Vui lòng nhập số phút");
+        }
+    }
+</script>
+</body>
+</html>
