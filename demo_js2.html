@@ -12,6 +12,10 @@
     <h2><span id="minutes">00</span>:<span id="seconds">00</span> </h2>
     <a href="#" onclick="onoff()">ON/OFF</a>
     <div id="light">LIGHT</div>
+    <p class="ph"> p1</p>
+    <p class="ph"> p2</p>
+    <p class="ph"> p3</p>
+    <span class="ph">SP1</span>
     <script type="text/javascript">
         var obj = {};
         obj.name = "Lê Văn Hùng";// object.attribute = value;
@@ -40,6 +44,13 @@
         obj3.khaibao();
     </script>
 <script type="text/javascript">
+    // tạo object từ tag, class
+    var ps = document.getElementsByClassName("ph"); // ps là 1 mảng các object
+    for(var i=0;i<ps.length;i++){
+        ps[i].style.color = "red";
+    }
+    var ps1 = document.getElementsByTagName("p");// ps1 la mảng các object
+    var ps2 = document.querySelectorAll("p.ph"); // ps2  la mảng các object -> gọi theo phương pháp của css
     function onoff(){
         var l = document.getElementById("light");
         if(l.style.display == "none"){
