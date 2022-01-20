@@ -23,7 +23,7 @@ function submit(){
         email:document.getElementById("email").value,
         address:document.getElementById("address").value
     };
-
+    console.log(student);// dump data
     // var formcontrols = document.getElementsByClassName("form-control");// 3 input + textarea
     // for(var i =0;i<formcontrols.length;i++){
     //     student[formcontrols[i].name] = formcontrols[i].value;
